@@ -1,2 +1,2 @@
-# Group-Project-Max-Paige-Adam
-Flatiron School phase 1 group project. 
+This is the group project of Paige, Adam, and Max. For this project we have decided to create a music discovery and listening journal app.
+This app will allow users to make note of what albums they have listened to, learn about

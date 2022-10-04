@@ -1,0 +1,29 @@
+
+#top {body
+    background-color: rgb(163, 149, 94);
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', sans-serif;
+    text-align: center;
+    font-size: 72px;
+}
+
+body {
+    background-color: rgb(163, 149, 94);
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', sans-serif;
+}
+
+div{
+    font-size: 20px;
+}
+
+button {
+    border: 0;
+    width:200px;
+    color: black;
+    background: rgb(116, 0, 0); 
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Gill Sans', sans-serif;
+}
