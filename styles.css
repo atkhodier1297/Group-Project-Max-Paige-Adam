@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: rgb(163, 149, 94);
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     font-family: 'Gill Sans', sans-serif;
 }
@@ -20,8 +20,8 @@ div{
 button {
     border: 0;
     width:200px;
-    color: black;
-    background: rgb(116, 0, 0); 
+    color: rgb(0, 0, 0);
+    background: rgb(89, 51, 157); 
     padding: 10px;
     border-radius: 5px;
     font-size: 20px;
