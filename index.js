@@ -6,19 +6,20 @@ const options = {
 	}
 };
 
+let rankData = []
+let currentArtist = null
+
 fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+	.then((data) => {
+		artistData = data
 
+		artistData.forEach((artist) => {
+			createRankDiv(artist)
+			console.log(artistData)
+		})
+})
 
+function createRankDiv(artObj){
 
-
-
-
-const listenedButton = document.getElementById('listened')
-listenedButton.addEventListener('click', clickyclick)
-
-function clickyclick(){
-console.log(listenedButton)
 }
