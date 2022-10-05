@@ -11,7 +11,7 @@ let currentArtist = null
 fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 	.then(response => response.json())
 	.then((data) => {
-		artistData = data
+		artistData = data.slice(0,20)
 
 		artistData.forEach((artist) => {
 			createRankDiv(artist)
