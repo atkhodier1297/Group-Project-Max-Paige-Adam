@@ -7,6 +7,8 @@ const options = {
 };
 
 let currentArtist = null
+let artists = document.getElementById('description')
+let listeningList = document.getElementById('listening-list')
 
 fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 	.then(response => response.json())
@@ -15,7 +17,7 @@ fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 
 		artistData.forEach((artist) => {
 			createRankDiv(artist)
-			console.log(artistData)
+			//console.log(artistData)
 		})
 })
 
@@ -52,6 +54,31 @@ function showArtists(artObj){
 }
 
 function showMonthly(artObj) {
-	//console.log('I was hovered')
-	
+	//console.log('ouch!')
+	let monthlyCount = document.getElementById('monthly-count')
+	monthlyCount.textContent = `Monthly Listeners ${artObj.monthlyListeners} million`
+	artists.addEventListener('mouseout', () => {
+		monthlyCount.textContent = 'Monthly Listeners'
+	addArtist()
+	})
 }
+
+function addArtist(artObj){
+	let artistName = document.getElementById('description')
+	let addButton = document.getElementById ('add')
+	addButton.addEventListener('click', () => {
+		
+		listeningList.append(artistName.textContent)
+		makeClearButton()
+	})
+	}
+
+function makeClearButton(artObj){
+	let clearButton = document.getElementById('clear')
+	clearButton.addEventListener('click', () => {
+		listeningList.textContent = ''
+		console.log (clearButton)
+	})
+}
+//event.preventDefault()
+//crossOffTask.addEventListener('click', (deleteEvent) => delete(deleteEvent))
