@@ -27,4 +27,31 @@ function createRankDiv(artObj){
 	artRank.textContent = artObj.rank
 	rankBar.append(artRank)
 
+	artRank.addEventListener('click', () => {
+
+		showArtists(artObj)
+		
+	})
+
+}
+
+function showArtists(artObj){
+	//console.log('I was clicked')
+
+	currentArtist = artObj
+
+	let artists = document.getElementById('description')
+
+	artists.textContent = currentArtist.artist
+
+	artists.addEventListener("mouseover", () => {
+
+		showMonthly(artObj)
+
+	})
+}
+
+function showMonthly(artObj) {
+	//console.log('I was hovered')
+	
 }
