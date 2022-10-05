@@ -38,3 +38,26 @@ button {
     width: 50%;
     padding: 15px;
 }
+
+#div-rank span {
+    padding: 1%;
+    height: center;
+    width: center;
+    display: inline-block;
+    justify-content: center;
+    font-size: 3vh;
+    align-items: center;
+    border-radius: 1em;
+    border: 2px solid white;
+  }
+
+  #div-rank {
+    height: 15vh;
+    background: rgba(138, 0, 0, 0.462);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 3vh;
+  }
+
+

@@ -6,7 +6,6 @@ const options = {
 	}
 };
 
-let rankData = []
 let currentArtist = null
 
 fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
@@ -21,5 +20,11 @@ fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 })
 
 function createRankDiv(artObj){
+
+	let rankBar = document.getElementById('div-rank')
+	let artRank = document.createElement('span')
+
+	artRank.textContent = artObj.rank
+	rankBar.append(artRank)
 
 }
