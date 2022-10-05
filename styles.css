@@ -37,14 +37,8 @@ button {
 .artist-names{
     width: 50%;
     padding: 15px;
-    align-items: left;
+    align-items: center;
     float: left;
-}
-
-.my-list{
-    width: 50%;
-    padding: 15px;
-    float: right;
 }
 
 #div-rank span {
