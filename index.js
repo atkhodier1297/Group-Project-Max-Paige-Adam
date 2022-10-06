@@ -17,16 +17,18 @@ fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 
 		artistData.forEach((artist) => {
 			createRankDiv(artist)
-			console.log(artistData)
+			//console.log(artistData)
 		})
 })
 
 function createRankDiv(artObj){
 
+	currentArtist = artObj
+
 	let rankBar = document.getElementById('div-rank')
 	let artRank = document.createElement('span')
 
-	artRank.textContent = `# ${artObj.rank}`
+	artRank.textContent = `# ${currentArtist.rank}`
 	rankBar.append(artRank)
 
 	artRank.addEventListener('click', () => {
@@ -49,26 +51,30 @@ function showArtists(artObj){
 	artists.addEventListener("mouseover", () => {
 
 		showMonthly(artObj)
-
 	})
 }
 
 function showMonthly(artObj) {
-	console.log('ouch!')
+	currentArtist = artObj
+	console.log('I was hovered!')
 	let monthlyCount = document.getElementById('monthly-count')
-	monthlyCount.textContent = `Monthly Listeners ${artObj.monthlyListeners} million`
+	monthlyCount.textContent = `Monthly Listeners ${currentArtist.monthlyListeners} million`
 	artists.addEventListener('mouseout', () => {
 		monthlyCount.textContent = 'Monthly Listeners'
-	addArtist(artObj)
+		console.log('I moused out')
+		addArtist(artObj)
 	})
+	
 }
 
-function addArtist(artObj){
+function addArtist(){
 	//let artistName = document.getElementById('description')
+	
 	let addButton = document.getElementById ('add')
 	addButton.addEventListener('click', () => {
 		
 		listeningList.append(artists.textContent)
+		console.log('Add was clicked')
 		makeClearButton()
 	})
 	}
@@ -77,7 +83,7 @@ function makeClearButton(){
 	let clearButton = document.getElementById('clear')
 	clearButton.addEventListener('click', () => {
 		listeningList.textContent = ''
-		console.log (clearButton)
+		console.log(clearButton)
 	})
 }
 //event.preventDefault()
