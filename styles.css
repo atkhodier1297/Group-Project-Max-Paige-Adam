@@ -51,6 +51,7 @@ button {
     align-items: center;
     border-radius: 1em;
     border: 2px solid white;
+    box-shadow: 3px 7px;
   }
 
   #div-rank {
@@ -60,6 +61,7 @@ button {
     justify-content: space-around;
     align-items: center;
     padding-bottom: 3vh;
+    padding-top: 3vh;
   }
 
 
