@@ -42,7 +42,7 @@ function showArtists(artObj){
 
 	currentArtist = artObj
 
-	let artists = document.getElementById('description')
+	//let artists = document.getElementById('description')
 
 	artists.textContent = currentArtist.artist
 
@@ -59,16 +59,16 @@ function showMonthly(artObj) {
 	monthlyCount.textContent = `Monthly Listeners ${artObj.monthlyListeners} million`
 	artists.addEventListener('mouseout', () => {
 		monthlyCount.textContent = 'Monthly Listeners'
-	addArtist()
+	addArtist(artObj)
 	})
 }
 
-function addArtist(){
-	let artistName = document.getElementById('description')
+function addArtist(artObj){
+	//let artistName = document.getElementById('description')
 	let addButton = document.getElementById ('add')
 	addButton.addEventListener('click', () => {
 		
-		listeningList.append(artistName.textContent)
+		listeningList.append(artists.textContent)
 		makeClearButton()
 	})
 	}
