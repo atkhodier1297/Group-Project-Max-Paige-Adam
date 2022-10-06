@@ -6,29 +6,28 @@ const options = {
 	}
 };
 
-let currentArtist = null
 let artists = document.getElementById('description')
 let listeningList = document.getElementById('listening-list')
-
+let testDiv = document.createElement('div')
+artists.append(testDiv)
 fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 	.then(response => response.json())
 	.then((data) => {
 		artistData = data.slice(0,20)
 
-		artistData.forEach((artist) => {
-			createRankDiv(artist)
+		artistData.forEach((artObj) => {
+			createRankDiv(artObj)
 			//console.log(artistData)
 		})
+		
 })
 
 function createRankDiv(artObj){
 
-	currentArtist = artObj
-
 	let rankBar = document.getElementById('div-rank')
 	let artRank = document.createElement('span')
 
-	artRank.textContent = `# ${currentArtist.rank}`
+	artRank.textContent = `# ${artObj.rank}`
 	rankBar.append(artRank)
 
 	artRank.addEventListener('click', () => {
@@ -41,33 +40,33 @@ function createRankDiv(artObj){
 
 function showArtists(artObj){
 	console.log('I was clicked')
-
-	currentArtist = artObj
-
 	//let artists = document.getElementById('description')
 
-	artists.textContent = currentArtist.artist
-
-	artists.addEventListener("mouseover", () => {
+	artists.removeChild(artists.lastElementChild)
+	let artistDiv = document.createElement('div')
+	artistDiv.textContent = artObj.artist
+	artists.appendChild(artistDiv)
+	//artists.removeEventListener("mouseover", showMonthly);
+	artistDiv.addEventListener("mouseover", () => {
 
 		showMonthly(artObj)
 	})
 }
 
 function showMonthly(artObj) {
-	currentArtist = artObj
+	
 	console.log('I was hovered!')
 	let monthlyCount = document.getElementById('monthly-count')
-	monthlyCount.textContent = `Monthly Listeners ${currentArtist.monthlyListeners} million`
+	monthlyCount.textContent = `Monthly Listeners ${artObj.monthlyListeners} million`
 	artists.addEventListener('mouseout', () => {
-		monthlyCount.textContent = 'Monthly Listeners'
-		console.log('I moused out')
-		addArtist(artObj)
+	monthlyCount.textContent = 'Monthly Listeners'
+	console.log('I moused out')
+		
 	})
-	
+	addArtist(artObj)
 }
 
-function addArtist(){
+function addArtist(artObj){
 	//let artistName = document.getElementById('description')
 	
 	let addButton = document.getElementById ('add')
@@ -75,11 +74,11 @@ function addArtist(){
 		
 		listeningList.append(artists.textContent)
 		console.log('Add was clicked')
-		makeClearButton()
+		makeClearButton(artObj)
 	})
 	}
 
-function makeClearButton(){
+function makeClearButton(artObj){
 	let clearButton = document.getElementById('clear')
 	clearButton.addEventListener('click', () => {
 		listeningList.textContent = ''
