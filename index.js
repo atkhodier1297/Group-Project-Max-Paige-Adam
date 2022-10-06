@@ -22,6 +22,8 @@ fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 		
 })
 
+addArtist()
+
 function createRankDiv(artObj){
 
 	let rankBar = document.getElementById('div-rank')
@@ -63,7 +65,6 @@ function showMonthly(artObj) {
 	console.log('I moused out')
 		
 	})
-	addArtist(artObj)
 }
 
 function addArtist(artObj){
@@ -72,7 +73,7 @@ function addArtist(artObj){
 	let addButton = document.getElementById ('add')
 	addButton.addEventListener('click', () => {
 		
-		listeningList.append(artists.textContent)
+		listeningList.append(`${artists.textContent} `)
 		console.log('Add was clicked')
 		makeClearButton(artObj)
 	})

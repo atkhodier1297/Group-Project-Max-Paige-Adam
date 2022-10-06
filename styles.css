@@ -29,6 +29,9 @@ button {
     font-family: 'Gill Sans', sans-serif;
 }
 
+#listening-list{
+    width: 20%;
+}
 .listen-button {
     width: 50%;
     padding: 15px;
