@@ -79,7 +79,7 @@ function addArtist(artObj){
 	})
 	}
 
-function makeClearButton(artObj){
+function makeClearButton(){
 	let clearButton = document.getElementById('clear')
 	clearButton.addEventListener('click', () => {
 		listeningList.textContent = ''
