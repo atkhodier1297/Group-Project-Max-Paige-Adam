@@ -1,6 +1,6 @@
 
 #top {
-    background-color: rgb(35, 204, 41);
+    background-color: rgb(30, 215, 96);
     color: rgb(255, 255, 255);
     font-family: 'Gill Sans', sans-serif;
     text-align: center;
@@ -23,7 +23,7 @@ button {
     border: 1;
     width:200px;
     color: rgb(255, 255, 255);
-    background: rgb(35, 204, 41); 
+    background: rgb(30, 215, 96); 
     padding: 10px;
     border-radius: 5px;
     border-color: white;
@@ -62,7 +62,6 @@ button:hover {
     align-items: center;
     border-radius: 1em;
     border: 3px solid white;
-    box-shadow: 2px 5px;
   }
 
   #div-rank span:hover {
@@ -71,7 +70,7 @@ button:hover {
 
   #div-rank {
     height: 15vh;
-    background: rgba(35, 204, 41);
+    background: rgb(30, 215, 96);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -80,4 +79,9 @@ button:hover {
     cursor: pointer;
   }
 
+  #logo {
+  max-width: 100%;
+  height: auto;
+  align-items: center;
+  }
 
