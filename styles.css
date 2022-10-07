@@ -1,11 +1,11 @@
 
 #top {
     background-color: rgb(30, 215, 96);
-    color: rgb(255, 255, 255);
+    color: white;
     font-family: 'Gill Sans', sans-serif;
     text-align: center;
     font-size: 75px;
-    padding: 15px;
+    padding: 30px;
     
 }
 
@@ -27,7 +27,7 @@ button {
     padding: 10px;
     border-radius: 5px;
     border-color: white;
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Gill Sans', sans-serif;
     cursor: pointer;
 }
@@ -37,7 +37,7 @@ button:hover {
 }
 
 #listening-list{
-    width: 50%;
+    width: 18%;
 }
 .listen-button {
     width: 50%;
@@ -86,3 +86,6 @@ button:hover {
     align-items: center;
   }
 
+#hover {
+    font-size: 25px;
+}

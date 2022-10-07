@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', fetchSpot)
 const options = {
 	method: 'GET',
 	headers: {
@@ -8,8 +9,11 @@ const options = {
 
 let artists = document.getElementById('description')
 let listeningList = document.getElementById('listening-list')
+let addButton = document.getElementById ('add')
 let testDiv = document.createElement('div')
 artists.append(testDiv)
+
+function fetchSpot(){
 fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 	.then(response => response.json())
 	.then((data) => {
@@ -17,10 +21,11 @@ fetch('https://spotify81.p.rapidapi.com/top_20_by_monthly_listeners', options)
 
 		artistData.forEach((artObj) => {
 			createRankDiv(artObj)
-			//console.log(artistData)
+			console.log(artistData)
 		})
 		
 })
+}
 
 addArtist()
 
@@ -67,15 +72,15 @@ function showMonthly(artObj) {
 	})
 }
 
-function addArtist(artObj){
+function addArtist(){
 	//let artistName = document.getElementById('description')
 	
-	let addButton = document.getElementById ('add')
+	//let addButton = document.getElementById ('add')
 	addButton.addEventListener('click', () => {
 		
-		listeningList.append(`${artists.textContent} `)
+		listeningList.append(`${artists.textContent}   `)
 		console.log('Add was clicked')
-		makeClearButton(artObj)
+		makeClearButton()
 	})
 	}
 
